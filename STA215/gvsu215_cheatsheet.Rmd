@@ -1,5 +1,5 @@
 ---
-title: "Cheat Sheet"
+title: "R Guide for gvsu215"
 output:
   rmarkdown::html_document:
     toc: true
@@ -8,29 +8,23 @@ output:
     highlight: kate
     number_sections: false
     self_contained: true
-author: "Modified cheatsheet orginally created by Ian Curtiss"
-vignette: >
- %\VignetteIndexEntry{Cheat Sheet}
- %\VignetteEngine{knitr::rmarkdown}
- %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, eval = T, 
                       warning = FALSE, message = FALSE, fig.cap = "\ ", fig.align = "center")
-
-# Tadoo
-# 
-# Update CSV part to import from URL, but note how you would update URL to be file path and link to videos showing how to find a file path on iMac and Windows
 ```
 
 ```{r klippy, echo=FALSE, include=TRUE}
 klippy::klippy()
 ```
 
-The example code below is organized by textbook chapter. This cheat sheet allows you to copy the relevant code and paste it into your own file. It is important to update all portions of the example code that start and end with an underscore.
+The example code below is organized by textbook chapter. This guide^[This guide was adapted from work by Ian Curtiss.] allows you to copy the relevant code and paste it into your own file. It is important to update all portions of the example code that start and end with an underscore.
 
 For example, `_DATANAME_` should be replaced with the name of the dataset and `_VARIABLE_` should be replaced with the variable of interest. Keep in mind that R is case sensitive, so if a variable is named `height` in a dataset then R will not recognize variables specified as `Height` or `HEIGHT`.
+
+<br>
+<br>
 
 ## Chapter 2: Analysis of Categorical Data
 
@@ -69,6 +63,10 @@ plot_bar(_DATANAME_, ~ _RESPONSE_, fill = ~ _EXPLANATORY_)
 ```
 
 Note: Specify `na_rm = TRUE` to remove missing values from the plot.
+
+
+<br>
+<br>
 
 ## Chapter 3: Analysis of One Quantitative Variable
 
@@ -124,6 +122,10 @@ plot_box(_DATANAME_, _RESPONSE_ ~ _GROUPVARIABLE_)
 plot_hist(_DATANAME_, ~ _VARIABLE_, group = ~ _GROUPVARIABLE_)
 ```
 
+
+<br>
+<br>
+
 ## Chapter 5: Estimating a Population Parameter
 
 Note: Confidence levels default to 95% but can be overridden with `conf_lvl = _DECIMAL_`. For example, specifying `conf_lvl = 0.90` will provide a 90% confidence interval. 
@@ -139,6 +141,10 @@ infer_1prop_int(_DATANAME_, ~ _VARIABLE_, success = "_SUCCESSCATEGORY_", conf_lv
 ```{verbatim, lang = "r"}
 infer_1mean_int(_DATANAME_, ~ _VARIABLE_, conf_lvl = _CONFIDENCELEVEL_)
 ```
+
+
+<br>
+<br>
 
 ## Chapter 6: Analysis of Two Quantitative Variabes
 
@@ -173,6 +179,10 @@ plot_scatter(_DATANAME_, _RESPONSE_ ~ _EXPLANATORY_, fill = ~ _GROUPVARIABLE_, l
 
 Note: Replace `_LEGENDTITLE_` with a title for the legend.
 
+
+<br>
+<br>
+
 ## Chapter 7: Introduction to Hypothesis Testing
 
 ### $\chi ^2$-test
@@ -204,6 +214,10 @@ infer_2prop_int(_DATANAME_, _RESPONSE_ ~ _EXPLANATORY_, success = _SUCCESSCATEGO
 ```
 
 Note: For this code to work the explanatory variable `_EXPLANATORY_` must have only two categories.
+
+
+<br>
+<br>
 
 ## Chapter 8: Testing for Differences
 

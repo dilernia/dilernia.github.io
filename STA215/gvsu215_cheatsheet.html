@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Modified cheatsheet orginally created by Ian Curtiss" />
 
 
-<title>Cheat Sheet</title>
+<title>R Guide for gvsu215</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -1713,9 +1712,7 @@ border-radius: 0px;
 
 
 
-<h1 class="title toc-ignore">Cheat Sheet</h1>
-<h4 class="author">Modified cheatsheet orginally created by Ian
-Curtiss</h4>
+<h1 class="title toc-ignore">R Guide for gvsu215</h1>
 
 </div>
 
@@ -1724,16 +1721,17 @@ Curtiss</h4>
   addClassKlippyTo("pre.r, pre.markdown");
   addKlippy('left', 'top', 'auto', '1', 'Copy code', 'Copied!');
 </script>
-<p>The example code below is organized by textbook chapter. This cheat
-sheet allows you to copy the relevant code and paste it into your own
-file. It is important to update all portions of the example code that
-start and end with an underscore.</p>
+<p>The example code below is organized by textbook chapter. This guide<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> allows you
+to copy the relevant code and paste it into your own file. It is
+important to update all portions of the example code that start and end
+with an underscore.</p>
 <p>For example, <code>_DATANAME_</code> should be replaced with the name
 of the dataset and <code>_VARIABLE_</code> should be replaced with the
 variable of interest. Keep in mind that R is case sensitive, so if a
 variable is named <code>height</code> in a dataset then R will not
 recognize variables specified as <code>Height</code> or
 <code>HEIGHT</code>.</p>
+<p><br> <br></p>
 <div id="chapter-2-analysis-of-categorical-data" class="section level2">
 <h2>Chapter 2: Analysis of Categorical Data</h2>
 <div id="frequency-table" class="section level3">
@@ -1761,6 +1759,7 @@ plot.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">plot_bar</span>(_DATANAME_, <span class="sc">~</span> _RESPONSE_, <span class="at">fill =</span> <span class="sc">~</span> _EXPLANATORY_)</span></code></pre></div>
 <p>Note: Specify <code>na_rm = TRUE</code> to remove missing values from
 the plot.</p>
+<p><br> <br></p>
 </div>
 </div>
 <div id="chapter-3-analysis-of-one-quantitative-variable" class="section level2">
@@ -1809,6 +1808,7 @@ histogram.</p>
 <div id="histogram-by-group" class="section level3">
 <h3>Histogram By Group</h3>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="fu">plot_hist</span>(_DATANAME_, <span class="sc">~</span> _VARIABLE_, <span class="at">group =</span> <span class="sc">~</span> _GROUPVARIABLE_)</span></code></pre></div>
+<p><br> <br></p>
 </div>
 </div>
 <div id="chapter-5-estimating-a-population-parameter" class="section level2">
@@ -1823,6 +1823,7 @@ histogram.</p>
 <div id="confidence-interval-for-mu" class="section level3">
 <h3>Confidence Interval for <span class="math inline">\(\mu\)</span></h3>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">infer_1mean_int</span>(_DATANAME_, <span class="sc">~</span> _VARIABLE_, <span class="at">conf_lvl =</span> _CONFIDENCELEVEL_)</span></code></pre></div>
+<p><br> <br></p>
 </div>
 </div>
 <div id="chapter-6-analysis-of-two-quantitative-variabes" class="section level2">
@@ -1848,6 +1849,7 @@ least squares regression line on the plot.</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="fu">plot_scatter</span>(_DATANAME_, _RESPONSE_ <span class="sc">~</span> _EXPLANATORY_, <span class="at">fill =</span> <span class="sc">~</span> _GROUPVARIABLE_, <span class="at">legend_title =</span> <span class="st">&quot;_LEGENDTITLE_&quot;</span>)</span></code></pre></div>
 <p>Note: Replace <code>_LEGENDTITLE_</code> with a title for the
 legend.</p>
+<p><br> <br></p>
 </div>
 </div>
 <div id="chapter-7-introduction-to-hypothesis-testing" class="section level2">
@@ -1876,6 +1878,7 @@ p_2\)</span></h3>
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">infer_2prop_int</span>(_DATANAME_, _RESPONSE_ <span class="sc">~</span> _EXPLANATORY_, <span class="at">success =</span> _SUCCESSCATEGORY_, <span class="at">conf_lvl =</span> _CONFIDENCELEVEL_)</span></code></pre></div>
 <p>Note: For this code to work the explanatory variable
 <code>_EXPLANATORY_</code> must have only two categories.</p>
+<p><br> <br></p>
 </div>
 </div>
 <div id="chapter-8-testing-for-differences" class="section level2">
@@ -1897,6 +1900,12 @@ p_2\)</span></h3>
 <h3>ANOVA</h3>
 <div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="fu">infer_anova</span>(_DATANAME_, _VARIABLE_ <span class="sc">~</span> _GROUPVARIABLE_)</span></code></pre></div>
 </div>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>This guide was adapted from work by Ian Curtiss.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 
 
